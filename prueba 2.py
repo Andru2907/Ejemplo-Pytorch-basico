@@ -27,7 +27,6 @@ for epoch in range(1000):
     optimizer.zero_grad()
     inputs = torch.stack([edades, salarios], dim=1)
     outputs = model(inputs)
-    # reshape the target tensor to have the same size as the output tensor
     reshaped_labels = labels.view(-1, 1)
     loss = criterion(outputs, reshaped_labels)
     loss.backward()
